@@ -25,6 +25,7 @@ import Layout from './components/layout.tsx';
 import Privacy from './privacy.tsx';
 import { Helmet } from 'react-helmet';
 import { LinksProvider } from './context/links.tsx';
+import ArbitrumChat from './components/arbitrum-chatbot.tsx';
 
 const router = createHashRouter([
   {
@@ -37,31 +38,40 @@ const router = createHashRouter([
       </LinksProvider>
     ),
     children: [
-      { path: '/', element: <Home /> },
+      { path: '', element: <Home /> },
       {
         path: 'privacy-policy',
         element: <Privacy />,
       },
     ],
   },
+  {
+    path: 'chatbot',
+    element: (
+      <LinksProvider>
+        <Outlet />
+      </LinksProvider>
+    ),
+    children: [{ path: '', element: <ArbitrumChat /> }],
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Helmet>
-      <title>FairAI | Simple and Powerful AI Marketplace</title>
+      <title>FairAI | Democratized and truly open AI Marketplace</title>
       <meta
         name='description'
-        content='Unlock the full potential of democratized and open-source AI with FairAI.'
+        content='Discover the full potential of a democratized and truly open AI with FairAI.'
       />
       <meta property='og:url' content='getfair.ai' />
-      <meta property='og:site_name' content='FairAI | Simple and Powerful AI Marketplace' />
+      <meta property='og:site_name' content='FairAI | Democratized and truly open AI Marketplace' />
       <meta property='og:locale' content='en_US' />
       <meta property='og:image' content='./fairai_banner_whitebg.png' />
-      <meta name='twitter:title' content='FairAI | Simple and Powerful AI Marketplace' />
+      <meta name='twitter:title' content='FairAI | Democratized and truly open AI Marketplace' />
       <meta
         name='twitter:description'
-        content='Unlock the full potential of democratized and open-source AI with FairAI.'
+        content='Discover the full potential of a democratized and truly open AI with FairAI.'
       />
       <meta name='twitter:image' content='./fairai_banner_whitebg.png' />
       <meta name='twitter:card' content='./fairai_banner_whitebg.png' />

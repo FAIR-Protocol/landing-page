@@ -1,0 +1,29 @@
+.dark-text {
+  color: rgb(70, 70, 70);
+}
+
+.button-arbitrum {
+  height: 35px;
+  padding: 20px 15px;
+  color: black;
+  font-weight: 500;
+  background-color: #e6e6e6;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  transition: 0.05s all;
+
+  svg {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: #000000;
+    color: white;
+  }
+}
